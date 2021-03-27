@@ -1,16 +1,20 @@
 import { Routes } from '@angular/router';
+import { InitialComponent } from './modules/initial/initial.component';
 import { ShowProductsComponent } from './modules/show-products/show-products.component';
-import { NavBarComponent } from './modules/shared/nav-bar/nav-bar.component';
+
 
 export const routes: Routes = [
   {
     path: 'products',
     component: ShowProductsComponent
-
+  },
+  {
+    path: 'initial',
+    component: InitialComponent
   },
   {
     path: '**',
     pathMatch: 'full',
-    redirectTo: 'products'
+    redirectTo: 'initial'
   }
 ]
