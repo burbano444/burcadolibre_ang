@@ -18,12 +18,13 @@ export class NavBarComponent implements OnInit {
 
   search(product:string) {
 
-    this.servicecli.concat(product).subscribe((result)=>{
+    this.servicecli.concat(product, 1).subscribe((result)=>{
       this.servicecli.uptdatedata(result);
-      this.rute.navigate(['products']);
+      this.rute.navigate(['products/1']);
     });
-
-
   }
 
+  inicio(){
+    this.rute.navigate(['initial'])
+  }
 }

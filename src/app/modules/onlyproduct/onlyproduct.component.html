@@ -1,0 +1,21 @@
+<div>
+  <h1>{{product.title}}</h1>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <img src="{{product.pictures[0].url}}" class="img-fluid" alt="...">
+    </div>
+    <div class="col-md-8">
+      <h4>PRECIO: ${{product.price}}</h4>
+      <br>
+      <hr>
+      <h4>VENDEDOR: {{seller.nickname}}</h4>
+      <br>
+      <hr>
+      <h4>UNIDADES DISPONIBLES: {{product.available_quantity}}</h4>
+      <br>
+      <hr>
+      <h4>UNIDADES VENDIDAES: {{product.sold_quantity}}</h4>
+    </div>
+  </div>
+</div>

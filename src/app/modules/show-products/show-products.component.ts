@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MercadoService } from 'src/app/service/mercado.service';
+
+
 
 @Component({
   selector: 'app-show-products',
@@ -8,11 +11,29 @@ import { MercadoService } from 'src/app/service/mercado.service';
 })
 export class ShowProductsComponent implements OnInit {
   products:any;
-  constructor(public servicecli:MercadoService) {   }
-
-  ngOnInit(): void {
-    this.products=this.servicecli.data.results
-    console.log(this.products)
+  page:number;
+  constructor(public servicecli:MercadoService, public active:ActivatedRoute, public rt:Router) {
+    this.products=this.servicecli.getData().results;
+    console.log(this.products);
   }
 
+  ngOnInit(): void {
+    this.active.params.subscribe((page:any)=>{
+      this.page=page;
+    })
+  }
+
+  ngOnChange():void {
+    console.log('onChange');
+  }
+
+  actualizar(){
+    this.products=this.servicecli.getData().results;
+    console.log(this.products);
+  }
+
+  showmore(id:string){
+
+    this.rt.navigate([`/producto/${id}`]);
+  }
 }

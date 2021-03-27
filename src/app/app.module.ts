@@ -9,13 +9,17 @@ import { NavBarComponent } from './modules/shared/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { InitialComponent } from './modules/initial/initial.component';
+import { NavigatiorComponent } from './modules/navigatior/navigatior.component';
+import { OnlyproductComponent } from './modules/onlyproduct/onlyproduct.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ShowProductsComponent,
     NavBarComponent,
-    InitialComponent
+    InitialComponent,
+    NavigatiorComponent,
+    OnlyproductComponent
   ],
   imports: [
     BrowserModule,
